@@ -1,1 +1,19 @@
+<%- include('partials/header') %>
 
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow"></p>
+    <h1>Blog Studio</h1>
+    <p>Create, publish, and browse your blog posts😒.</p>
+    <div class="actions">
+      <a class="button" href="/posts">Read posts</a>
+      <% if (currentUser) { %>
+        <a class="button secondary" href="/dashboard">Go to dashboard</a>
+      <% } else { %>
+        <a class="button secondary" href="/signup">Create account</a>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

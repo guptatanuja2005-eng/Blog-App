@@ -1,0 +1,58 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <h1>Edit Post</h1>
+
+  <form action="/posts/<%= post.id %>/edit" method="POST">
+    <div>
+      <label>Title</label>
+      <input
+        type="text"
+        name="title"
+        value="<%= post.title %>"
+        required
+      />
+    </div>
+
+    <br>
+
+    <div>
+      <label>Excerpt</label>
+      <textarea
+        name="excerpt"
+        rows="3"
+      ><%= post.excerpt %></textarea>
+    </div>
+
+    <br>
+
+    <div>
+      <label>Content</label>
+      <textarea
+        name="content"
+        rows="10"
+        required
+      ><%= post.content %></textarea>
+    </div>
+
+    <br>
+
+    <button type="submit">
+      Update Post
+    </button>
+  </form>
+
+  <br>
+
+  <form action="/posts/<%= post.id %>/delete" method="POST">
+    <button type="submit">
+      Delete Post
+    </button>
+  </form>
+
+  <br>
+
+  <a href="/posts">Back to Posts</a>
+</div>
+
+<%- include('partials/footer') %>

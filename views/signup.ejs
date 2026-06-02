@@ -1,1 +1,25 @@
+<%- include('partials/header') %>
 
+<section class="auth-panel">
+  <h1>Create account</h1>
+  <a class="button oauth-button" href="/auth/google">Continue with Google</a>
+  <div class="auth-divider"><span>or</span></div>
+  <form method="post" action="/signup" class="stacked-form">
+    <label>
+      Name
+      <input name="name" autocomplete="name" required>
+    </label>
+    <label>
+      Email
+      <input name="email" type="email" autocomplete="email" required>
+    </label>
+    <label>
+      Password
+      <input name="password" type="password" autocomplete="new-password" minlength="6" required>
+    </label>
+    <button type="submit">Create account</button>
+  </form>
+  <p class="small-link">Already joined? <a href="/login">Login</a></p>
+</section>
+
+<%- include('partials/footer') %>

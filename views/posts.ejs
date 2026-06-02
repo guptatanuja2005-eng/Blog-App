@@ -1,0 +1,56 @@
+<%- include('partials/header') %>
+
+<section class="page-header">
+  <div>
+    <h1>Published posts</h1>
+    <p>Public posts from the blog database.</p>
+  </div>
+  <% if (currentUser) { %>
+    <a class="button" href="/posts/new">Create post</a>
+  <% } %>
+</section>
+
+<section class="post-list">
+  <% if (!posts.length) { %>
+    <p class="empty">No published posts yet.</p>
+  <% } %>
+  <% posts.forEach((post) => { %>
+    <article class="post-card">
+      <div>
+        <h2><a href="/posts/<%= post.slug %>"><%= post.title %></a></h2>
+        <p><%= post.excerpt || 'No excerpt added.' %></p>
+      </div>
+      <div class="post-meta">
+        <span>By <%= post.authorName %></span>
+        <% if (currentUser && currentUser.id === post.authorId) { %>
+          <div class="post-actions">
+            <a class="button secondary" href="/posts/<%= post.id %>/edit">Edit</a>
+            <form method="post" action="/posts/<%= post.id %>/delete">
+              <button class="danger" type="submit">Delete</button>
+            </form>
+          </div>
+        <% } %>
+      </div>
+    </article>
+  <% }) %>
+</section>
+
+<nav class="pagination" aria-label="Posts pagination">
+  <% if (pagination.hasPrevious) { %>
+    <a class="button secondary" href="/posts?page=<%= pagination.page - 1 %>">Previous</a>
+  <% } else { %>
+    <span class="button secondary disabled">Previous</span>
+  <% } %>
+
+  <span class="page-count">
+    Page <%= pagination.page %> of <%= pagination.totalPages %>
+  </span>
+
+  <% if (pagination.hasNext) { %>
+    <a class="button secondary" href="/posts?page=<%= pagination.page + 1 %>">Next</a>
+  <% } else { %>
+    <span class="button secondary disabled">Next</span>
+  <% } %>
+</nav>
+
+<%- include('partials/footer') %>

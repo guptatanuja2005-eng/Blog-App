@@ -1,0 +1,20 @@
+<%- include('partials/header') %>
+
+<article class="reader">
+  <p class="eyebrow">By <%= post.authorName %></p>
+  <h1><%= post.title %></h1>
+  <% if (post.excerpt) { %>
+    <p class="lead"><%= post.excerpt %></p>
+  <% } %>
+  <div class="actions">
+  <a class="button secondary" href="/posts/<%= post.id %>/edit">✏️ Edit post</a>
+
+  <form method="post" action="/posts/<%= post.id %>/delete">
+    <button class="danger" type="submit">🗑️ Delete post</button>
+  </form>
+</div>
+  <% } %>
+  <div class="content"><%= post.content %></div>
+</article>
+
+<%- include('partials/footer') %>

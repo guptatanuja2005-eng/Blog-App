@@ -1,1 +1,16 @@
+<%- include('partials/header') %>
 
+<section class="page-header">
+  <h1>Dashboard</h1>
+  <p>Welcome, 
+     <%= appData.user.name %>. Your authenticated blog workspace is ready.</p>
+  <div class="actions">
+    <a class="button" href="/posts/new">create posts</a>
+    <a class="button secondary" href="/posts">View posts</a>
+    <a href="/posts/new"></a>
+<br>
+<a href="/posts"></a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

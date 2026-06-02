@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <h1>Create Post</h1>
+
+  <form action="/posts" method="POST">
+    <div>
+      <label>Title</label>
+      <input
+        type="text"
+        name="title"
+        placeholder="Enter title"
+        required
+      />
+    </div>
+
+    <br>
+
+    <div>
+      <label>Excerpt</label>
+      <textarea
+        name="excerpt"
+        rows="3"
+        placeholder="Short description"
+      ></textarea>
+    </div>
+
+    <br>
+
+    <div>
+      <label>Content</label>
+      <textarea
+        name="content"
+        rows="10"
+        placeholder="Write your blog post here..."
+        required
+      ></textarea>
+    </div>
+
+    <br>
+
+    <button type="submit">
+      Publish Post
+    </button>
+  </form>
+
+  <br>
+
+  <a href="/posts">Back to Posts</a>
+</div>
+
+<%- include('partials/footer') %>
