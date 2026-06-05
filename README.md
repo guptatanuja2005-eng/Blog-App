@@ -144,32 +144,6 @@ npm run dev
 npm start
 ```
 
-## Routes
-
-### Authentication
-
-| Method | Route | Description |
-|----------|---------|-------------|
-| GET | /signup | Signup Page |
-| POST | /signup | Create Account |
-| GET | /login | Login Page |
-| POST | /login | Login User |
-| GET | /logout | Logout |
-| GET | /auth/google | Google Login |
-
-### Blogs
-
-| Method | Route | Description |
-|----------|---------|-------------|
-| GET | / | Home |
-| GET | /dashboard | User Dashboard |
-| GET | /create-blog | Create Blog Page |
-| POST | /create-blog | Create Blog |
-| GET | /blog/:id | View Blog |
-| GET | /edit-blog/:id | Edit Blog Page |
-| POST | /edit-blog/:id | Update Blog |
-| POST | /delete-blog/:id | Delete Blog |
-
 ## Future Improvements
 
 - Rich Text Editor
@@ -177,7 +151,6 @@ npm start
 - Comments
 - Likes
 - Search Blogs
-- Pagination
 - User Profiles
 - Image Uploads
 
